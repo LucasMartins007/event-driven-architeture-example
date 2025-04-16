@@ -5,9 +5,9 @@ on:
       - master
       - develop
     paths:
-      - 'servico1/**'
-      - 'servico2/**'
-      - 'servico3/**'
+      - 'inventory/**'
+      - 'notification/**'
+      - 'order/**'
   pull_request:
     branches:
       - master
@@ -32,7 +32,7 @@ jobs:
       - name: Build and analyze
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
           cd ${{ matrix.service }}
           mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
