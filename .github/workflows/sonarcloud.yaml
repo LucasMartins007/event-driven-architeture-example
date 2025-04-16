@@ -2,7 +2,7 @@ name: SonarCloud Analysis
 on:
   push:
     branches:
-      - main
+      - master
       - develop
     paths:
       - 'servico1/**'
@@ -10,7 +10,7 @@ on:
       - 'servico3/**'
   pull_request:
     branches:
-      - main
+      - master
       - develop
 
 jobs:
